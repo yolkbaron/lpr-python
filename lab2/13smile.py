@@ -1,0 +1,52 @@
+import turtle as t
+import numpy as np
+
+def halfcircr(r):
+    a = 2*r*np.sin(np.pi/90)
+    for j in range(90):
+        t.forward(a)
+        t.right(2)
+
+def circr(r):
+    a = 2*r*np.sin(np.pi/180)
+    for j in range(180):
+        t.forward(a)
+        t.right(2)
+
+t.shape('turtle')
+t.penup()
+t.goto(-100, 0)
+t.pendown()
+t.left(90)
+t.begin_fill()
+circr(100)
+t.color('yellow')
+t.end_fill()
+t.color('black')
+t.penup()
+t.goto(30, 40)
+t.pendown()
+t.begin_fill()
+circr(10)
+t.color('blue')
+t.end_fill()
+t.color('black')
+t.penup()
+t.goto(-50, 40)
+t.pendown()
+t.begin_fill()
+circr(10)
+t.color('blue')
+t.end_fill()
+t.color('black')
+t.penup()
+t.goto(0, 0)
+t.pendown()
+t.left(180)
+t.width(10)
+t.forward(20)
+t.penup()
+t.goto(50, -20)
+t.pendown()
+t.color('red')
+halfcircr(25)
