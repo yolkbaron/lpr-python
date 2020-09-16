@@ -9,4 +9,4 @@ for i in range(50):
     t.left(90)
     t.forward(10 + 5*i)
     t.left(90)
-     
+t.done()
