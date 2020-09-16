@@ -1,7 +1,7 @@
 from turtle import *
 from numpy import *
 
-def addnum(num:int):
+def addnum(num:int): #рисует цифру и переходит в начало следующей
     if num == 0:
         pendown()
         forward(100)
