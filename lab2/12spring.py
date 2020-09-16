@@ -13,3 +13,4 @@ t.left(90)
 for i in range(k):
     halfcircr(5)
     halfcircr(1)
+t.done()
