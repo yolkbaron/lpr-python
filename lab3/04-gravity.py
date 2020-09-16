@@ -21,7 +21,7 @@ color('black')
 pendown()
 x = 0.0
 y = 10.0
-vx = 0
+vx = 20
 vy = 50
 seconds = 60
 pendown()
