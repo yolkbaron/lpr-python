@@ -21,3 +21,4 @@ t.left(90)
 for i in range(k):
     circl(5 + i)
     circr(5 + i)
+t.done()
