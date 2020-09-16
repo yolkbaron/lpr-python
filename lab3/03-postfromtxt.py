@@ -4,7 +4,6 @@ from numpy import *
 def addnum(num:int):
     inp = open('03-nums.txt', 'r').readlines()
     s = inp[num].rstrip()
-    print(s)
     commlist = s.split(' -> ')
     for command in commlist:
         eval(command)
