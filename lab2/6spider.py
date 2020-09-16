@@ -9,4 +9,4 @@ for i in range(n):
     t.stamp()
     t.goto(0, 0)
     t.right(360/n)
-     
+t.done()
