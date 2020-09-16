@@ -20,3 +20,4 @@ k = int(input())
 for i in range(k):
     circl(5)
     t.left(360/k)
+t.done()
