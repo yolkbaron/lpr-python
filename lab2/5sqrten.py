@@ -21,3 +21,4 @@ t.shape('turtle')
 t.speed(10)
 for i in range(10):
     sqr(10 + 10*i)
+t.done()
