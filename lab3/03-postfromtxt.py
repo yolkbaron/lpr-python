@@ -3,7 +3,7 @@ from numpy import *
 
 def addnum(num:int):
     inp = open('03-nums.txt', 'r').readlines()
-    s = inp[num].rstrip()
+    s = inp[num].rstrip() #в строке с номеров num содержится алгоритм для цифры num
     commlist = s.split(' -> ')
     for command in commlist:
         eval(command)
@@ -19,6 +19,6 @@ speed(8)
 color('blue','blue')
 width(3)
 left(90)
-index = '1234567890'
+index = '141700'
 drawindex(index) 
 done()
