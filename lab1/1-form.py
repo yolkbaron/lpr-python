@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import numpy as np
 
 def y(x):
@@ -12,10 +6,3 @@ def y(x):
 x = [1, 10, 1000]
 for i in x:
     print(y(i), end = ' ')
-
-
-# In[ ]:
-
-
-
-
