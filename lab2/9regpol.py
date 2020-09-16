@@ -21,3 +21,4 @@ for i in range(3, k+1):
     t.penup()
     t.forward(20)
     t.pendown()
+t.done()
