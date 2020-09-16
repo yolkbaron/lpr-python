@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[3]:
-
-
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -15,10 +9,3 @@ plt.ylabel(r'$y$')
 plt.title(r'$f(x)$')
 plt.grid(True)
 plt.show()
-
-
-# In[ ]:
-
-
-
-
