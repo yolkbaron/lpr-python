@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[10]:
-
-
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -23,10 +17,3 @@ plt.ylabel(r'$f(t)$')
 plt.legend(loc='best', fontsize=12)
 plt.grid(True)
 plt.show()
-
-
-# In[ ]:
-
-
-
-
