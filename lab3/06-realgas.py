@@ -6,7 +6,7 @@ from numpy import *
 number_of_atoms = 5
 steps_of_time_number = 2000
 size = 100
-atomsize = 5
+atomsize = 10
 
 penup()
 goto(size, size)
@@ -35,16 +35,20 @@ for atom in gas:
 
 for i in range(steps_of_time_number):
     for atom in gas:
-        x[atom] += vx[atom]
-        y[atom] += vy[atom]
+        is_collision = 0
+        xsave = x[atom]
+        ysave = y[atom]
+        x[atom] += vx[atom]/5
+        y[atom] += vy[atom]/5
         if x[atom] > size - atomsize or x[atom] < -size + atomsize:
-            x[atom] -= vx[atom]
+            x[atom] -= vx[atom]/5
             vx[atom] = -vx[atom]
         if y[atom] > size - atomsize or y[atom] < -size + atomsize:
-            y[atom] -= vy[atom]
+            y[atom] -= vy[atom]/5
             vy[atom] = -vy[atom]
         for atom2 in gas:
-            if (x[atom] - x[atom2])**2 + (y[atom] - y[atom2])**2 < atomsize**2:
+            if (x[atom] - x[atom2])**2 + (y[atom] - y[atom2])**2 <= atomsize**2:
+                is_collision = 1
                 vx1 = vx[atom]
                 x1 = x[atom]
                 vx2 = vx[atom2]
@@ -53,11 +57,11 @@ for i in range(steps_of_time_number):
                 y1 = y[atom]
                 vy2 = vy[atom2]
                 y2 = y[atom2]
-                d = sqrt((x1-x2)**2+(y1-y2)**2)
+                d = sqrt((x1-x2)**2+(y1-y2)**2)+1
                 u = -((x1-x2)*(vx1-vx2)/d + (y1-y2)*(vy1-vy2)/d)
-                vx[atom] = vx1 + u*(x1-x2)/d
-                vx[atom2] = vx2 - u*(x1-x2)/d
-                vy[atom] = vy1 + u*(y1-y2)/d
-                vy[atom2] = vy2 - u*(y1-y1)/d
+                vx[atom] += u*(x1-x2)/d
+                vx[atom2] -= u*(x1-x2)/d
+                vy[atom] += u*(y1-y2)/d
+                vy[atom2] -= u*(y1-y1)/d
         atom.goto(x[atom], y[atom])
 done()
