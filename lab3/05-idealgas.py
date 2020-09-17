@@ -37,11 +37,17 @@ for i in range(steps_of_time_number):
     for atom in gas:
         x[atom] += vx[atom]
         y[atom] += vy[atom]
-        if x[atom] > size - atomsize or x[atom] < -size + atomsize:
-            x[atom] -= vx[atom]
+        if x[atom] > size - atomsize:
+            x[atom] = size - atomsize
             vx[atom] = -vx[atom]
-        if y[atom] > size - atomsize or y[atom] < -size + atomsize:
-            y[atom] -= vy[atom]
+        if x[atom] < -size + atomsize:
+            x[atom] = -size + atomsize
+            vx[atom] = -vx[atom]
+        if y[atom] > size - atomsize:
+            y[atom] = size - atomsize
+            vy[atom] = -vy[atom]
+        if y[atom] < -size + atomsize:
+            y[atom] = -size + atomsize
             vy[atom] = -vy[atom]
         atom.goto(x[atom], y[atom])
 done()
