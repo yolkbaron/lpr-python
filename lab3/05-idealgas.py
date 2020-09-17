@@ -4,9 +4,9 @@ from turtle import *
 
 number_of_atoms = 10
 steps_of_time_number = 2000
-size = 100 #размер поля
+size = 300 
 atomsize = 10
-quality = 10 #чем больше, тем выше точность одного шага 
+quality = 10 
 
 penup()
 goto(size, size)
@@ -30,18 +30,24 @@ for atom in gas:
     y[atom] = randint(-size + atomsize, size - atomsize)
     vx[atom] = randint(-size, size)/quality
     vy[atom] = randint(-size, size)/quality
-    atom.shapesize(atomsize/10)
+    atom.shapesize(atomsize / 10)
     atom.goto(x[atom], y[atom])
 
 for i in range(steps_of_time_number):
     for atom in gas:
         x[atom] += vx[atom]
         y[atom] += vy[atom]
-        if x[atom] > size - atomsize or x[atom] < -size + atomsize:
-            x[atom] -= vx[atom]
+        if x[atom] > size - atomsize or x[atom] < -size + atomsize: 
+            if x[atom] > 0:
+                x[atom] = size - atomsize
+            else:
+                x[atom] = -size + atomsize
             vx[atom] = -vx[atom]
         if y[atom] > size - atomsize or y[atom] < -size + atomsize:
-            y[atom] -= vy[atom]
+            if y[atom] > 0:
+                y[atom] = size - atomsize
+            else:
+                y[atom] = -size + atomsize
             vy[atom] = -vy[atom]
         atom.goto(x[atom], y[atom])
 done()
