@@ -36,9 +36,6 @@ for atom in gas:
 
 for i in range(steps_of_time_number):
     for atom in gas:
-        is_collision = 0
-        xsave = x[atom]
-        ysave = y[atom]
         x[atom] += vx[atom]
         y[atom] += vy[atom]
         if x[atom] > size - atomsize or x[atom] < -size + atomsize: 
@@ -55,7 +52,6 @@ for i in range(steps_of_time_number):
             vy[atom] = -vy[atom]
         for atom2 in gas:
             if (x[atom] - x[atom2])**2 + (y[atom] - y[atom2])**2 <= 4*atomsize**2:
-                is_collision = 1
                 vx1 = vx[atom]
                 x1 = x[atom]
                 vx2 = vx[atom2]
