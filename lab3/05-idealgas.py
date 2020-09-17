@@ -6,7 +6,7 @@ number_of_atoms = 10
 steps_of_time_number = 2000
 size = 100 #размер поля
 atomsize = 1
-quality = 10 #чем больше, тем выше точность одного шага 
+quality = 20 #чем больше, тем выше точность одного шага 
 
 penup()
 goto(size, size)
