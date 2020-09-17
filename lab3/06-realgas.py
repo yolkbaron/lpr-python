@@ -1,7 +1,7 @@
 number_of_atoms = 100
 steps_of_time_number = 2000
 size = 100 #размер поля
-atomsize = 1
+atomsize = 10
 quality = 1 #чем больше, тем выше точность одного шага
 
 penup()
@@ -34,13 +34,19 @@ for i in range(steps_of_time_number):
         is_collision = 0
         xsave = x[atom]
         ysave = y[atom]
-        x[atom] += vx[atom]/5
-        y[atom] += vy[atom]/5
-        if x[atom] > size - atomsize or x[atom] < -size + atomsize:
-            x[atom] -= vx[atom]/5
+        x[atom] += vx[atom]
+        y[atom] += vy[atom]
+        if x[atom] > size - atomsize or x[atom] < -size + atomsize: 
+            if x[atom] > 0:
+                x[atom] = size - atomsize
+            else:
+                x[atom] = -size + atomsize
             vx[atom] = -vx[atom]
         if y[atom] > size - atomsize or y[atom] < -size + atomsize:
-            y[atom] -= vy[atom]/5
+            if y[atom] > 0:
+                y[atom] = size - atomsize
+            else:
+                y[atom] = -size + atomsize
             vy[atom] = -vy[atom]
         for atom2 in gas:
             if (x[atom] - x[atom2])**2 + (y[atom] - y[atom2])**2 <= 4*atomsize**2:
