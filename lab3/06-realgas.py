@@ -60,8 +60,8 @@ for i in range(steps_of_time_number):
                 y1 = y[atom]
                 vy2 = vy[atom2]
                 y2 = y[atom2]
-                d = sqrt((x1-x2)**2+(y1-y2)**2)+1
-                u = -((x1-x2)*(vx1-vx2)/d + (y1-y2)*(vy1-vy2)/d)
+                d = sqrt((x1-x2)**2+(y1-y2)**2)+1 #растояние между атомами
+                u = -((x1-x2)*(vx1-vx2)/d + (y1-y2)*(vy1-vy2)/d) #модуль изменения скорости первого атома
                 vx[atom] += u*(x1-x2)/d
                 vx[atom2] -= u*(x1-x2)/d
                 vy[atom] += u*(y1-y2)/d
