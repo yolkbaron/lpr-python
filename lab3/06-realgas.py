@@ -1,3 +1,8 @@
+from random import *
+from turtle import *
+from numpy import *
+
+
 number_of_atoms = 100
 steps_of_time_number = 2000
 size = 100 #размер поля
