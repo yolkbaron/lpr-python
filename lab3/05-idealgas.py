@@ -5,7 +5,8 @@ from turtle import *
 number_of_atoms = 10
 steps_of_time_number = 2000
 size = 100
-atomsize = 5
+atomsize = 10
+quality = 10
 
 penup()
 goto(size, size)
@@ -27,8 +28,8 @@ for atom in gas:
     atom.left(90)
     x[atom] = randint(-size + atomsize, size - atomsize)
     y[atom] = randint(-size + atomsize, size - atomsize)
-    vx[atom] = randint(-size, size)/10
-    vy[atom] = randint(-size, size)/10
+    vx[atom] = randint(-size, size)/quality
+    vy[atom] = randint(-size, size)/quality
     atom.shapesize(atomsize/10)
     atom.goto(x[atom], y[atom])
 
