@@ -1,12 +1,8 @@
-from random import *
-from turtle import *
-from numpy import *
-
-
-number_of_atoms = 5
+number_of_atoms = 100
 steps_of_time_number = 2000
 size = 100
-atomsize = 10
+atomsize = 1
+quality = 1
 
 penup()
 goto(size, size)
@@ -28,8 +24,8 @@ for atom in gas:
     atom.left(90)
     x[atom] = randint(-size + atomsize, size - atomsize)
     y[atom] = randint(-size + atomsize, size - atomsize)
-    vx[atom] = randint(-size, size)/10
-    vy[atom] = randint(-size, size)/10
+    vx[atom] = randint(-size, size)/quality
+    vy[atom] = randint(-size, size)/quality
     atom.shapesize(atomsize/10)
     atom.goto(x[atom], y[atom])
 
@@ -47,7 +43,7 @@ for i in range(steps_of_time_number):
             y[atom] -= vy[atom]/5
             vy[atom] = -vy[atom]
         for atom2 in gas:
-            if (x[atom] - x[atom2])**2 + (y[atom] - y[atom2])**2 <= atomsize**2:
+            if (x[atom] - x[atom2])**2 + (y[atom] - y[atom2])**2 <= 4*atomsize**2:
                 is_collision = 1
                 vx1 = vx[atom]
                 x1 = x[atom]
