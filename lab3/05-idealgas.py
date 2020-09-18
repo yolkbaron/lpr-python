@@ -4,6 +4,7 @@ from turtle import *
 
 number_of_atoms = 10
 steps_of_time_number = 2000
+
 size = 300 
 atomsize = 10
 quality = 10 
@@ -30,7 +31,7 @@ for atom in gas:
     y[atom] = randint(-size + atomsize, size - atomsize)
     vx[atom] = randint(-size, size)/quality
     vy[atom] = randint(-size, size)/quality
-    atom.shapesize(atomsize / 10)
+    atom.shapesize(atomsize)
     atom.goto(x[atom], y[atom])
 
 for i in range(steps_of_time_number):
