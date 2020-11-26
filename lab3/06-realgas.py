@@ -65,6 +65,6 @@ for i in range(steps_of_time_number):
                 vx[atom] += u*(x1-x2)/d
                 vx[atom2] -= u*(x1-x2)/d
                 vy[atom] += u*(y1-y2)/d
-                vy[atom2] -= u*(y1-y1)/d
+                vy[atom2] -= u*(y1-y2)/d
         atom.goto(x[atom], y[atom])
 done()
